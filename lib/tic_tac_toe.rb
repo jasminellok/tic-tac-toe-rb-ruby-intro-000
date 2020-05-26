@@ -74,4 +74,3 @@ def turn(board)
   move(board, index, marker)
   display_board(board)
 end
-
