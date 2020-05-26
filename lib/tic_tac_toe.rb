@@ -113,7 +113,7 @@ def over?(board)
   end
 end
 
-#SET UP 
+#SET UP
 def winner(board)
   if won?(board)
     return board[won?(board)[0]]
@@ -126,7 +126,7 @@ def play(board)
     turn(board)
   end
   if won?(board)
-    if winner(board) == "X" || winner(board) == "O" 
+    if winner(board) == "X" || winner(board) == "O"
       puts "Congratulations #{winner(board)}!"
   else draw?(board)
     puts "Draw!"
