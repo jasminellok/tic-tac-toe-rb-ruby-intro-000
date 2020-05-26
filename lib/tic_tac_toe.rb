@@ -48,9 +48,28 @@ def turn(board)
   puts "Please enter 1-9:"
   user_input = gets.strip
   index = input_to_index(user_input)
-  if valid_move?(board, index) == false
-     turn(board)
+  if valid_move?(board, index)
+    move(board, index, current_player(board))
+    display_board(board)
+  else
+    turn(board)
   end
-  move(board, index, marker)
-  display_board(board)
+end
+
+
+def turn_count(board)
+  counter = 0
+  board.each {|position|
+    if position == "X" || position == "O"
+      counter += 1
+    end
+  }
+  counter
+end
+
+def current_player(board)
+  if turn_count(board) % 2 == 0
+    return "X"
+  else
+    return "O"
 end
