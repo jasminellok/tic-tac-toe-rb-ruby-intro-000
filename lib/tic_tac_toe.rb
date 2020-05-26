@@ -110,3 +110,19 @@ def draw?(board)
      return false
    end
 end
+
+
+def over?(board)
+  if draw?(board) || won?(board) || full?(board)
+    return true
+  else
+    return false
+  end
+end
+
+#SET UP
+def winner(board)
+  if won?(board)
+    return board[won?(board)[0]]
+  end
+end
