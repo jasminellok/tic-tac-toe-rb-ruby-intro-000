@@ -98,7 +98,7 @@ end
 def draw?(board)
    if !won?(board) && full?(board)
      return true
-   elsif!full?(board) && !won?(board)
+   elsif !full?(board) && !won?(board)
      return false
    else won?(board)
      return false
@@ -113,28 +113,21 @@ def over?(board)
   end
 end
 
-SET UP FOR THE ENTIRE PLAY AND WINNER ANNOUNCEMENT
+#SET UP 
 def winner(board)
   if won?(board)
     return board[won?(board)[0]]
   end
 end
 
-def play(board)
-  counter = 0
-  until counter == 9
-  turn(board)
-  counter += 1
-  end
-end
 
 def play(board)
   until over?(board)
     turn(board)
   end
   if won?(board)
-    winner(board) == "X" || winner(board) == "O"
-    puts "Congratulations #{winner(board)}!"
+    if winner(board) == "X" || winner(board) == "O" 
+      puts "Congratulations #{winner(board)}!"
   else draw?(board)
     puts "Draw!"
   end
